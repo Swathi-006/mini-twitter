@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Chirp - Social Network</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <div class="app">
+
+    <aside class="sidebar">
+      <h1 class="logo">chirp<span>.</span></h1>
+
+      <nav>
+        <a class="active" href="#home">⌂ Home</a>
+        <a href="#explore">⌕ Explore</a>
+        <a href="#notifications">♡ Notifications</a>
+        <a href="#messages">✉ Messages</a>
+        <a href="#profile">♙ Profile</a>
+      </nav>
+
+      <button class="side-post" onclick="focusPost()">+ Create Post</button>
+
+      <div class="sidebar-profile">
+        <div class="avatar">U</div>
+        <div>
+          <strong id="sideName">Guest User</strong>
+          <small id="sideHandle">@guest</small>
+        </div>
+      </div>
+    </aside>
+
+    <main class="feed-area" id="home">
+
+      <div class="topbar">
+        <div>
+          <h2>Home</h2>
+          <p class="subheading">Your daily dose of conversations.</p>
+        </div>
+        <button class="login-button" id="loginBtn">Login</button>
+      </div>
+
+      <section class="welcome-banner">
+        <div>
+          <p class="eyebrow">WELCOME TO CHIRP</p>
+          <h2>Share your thoughts.<br>Connect with everyone.</h2>
+          <p>Discover conversations and share what matters to you.</p>
+        </div>
+        <div class="banner-icon">✦</div>
+      </section>
+
+      <section class="composer">
+        <div class="avatar">U</div>
+        <div class="composer-content">
+          <textarea id="postText" placeholder="What's happening today?"></textarea>
+          <div class="composer-bottom">
+            <span>✦ Share something interesting</span>
+            <button id="postBtn">Publish Post ↗</button>
+          </div>
+        </div>
+      </section>
+
+      <div class="feed-heading">
+        <h3>Latest Posts</h3>
+        <span>For you ✨</span>
+      </div>
+
+      <section id="feed"></section>
+
+    </main>
+
+    <aside class="rightbar">
+      <div class="search-box">
+        <span>⌕</span>
+        <input type="text" id="searchInput" placeholder="Search posts...">
+      </div>
+
+      <section class="right-card">
+        <h3>🔥 Trending Topics</h3>
+        <div class="trend">
+          <small>Technology · Trending</small>
+          <strong>#ArtificialIntelligence</strong>
+          <small>12.5K posts</small>
+        </div>
+        <div class="trend">
+          <small>Social · Trending</small>
+          <strong>#DailyThoughts</strong>
+          <small>8,420 posts</small>
+        </div>
+        <div class="trend">
+          <small>Community · Popular</small>
+          <strong>#ChirpCommunity</strong>
+          <small>5,210 posts</small>
+        </div>
+      </section>
+
+      <section class="right-card">
+        <h3>About Chirp</h3>
+        <p class="about-text">
+          A little space for big ideas. Share your thoughts,
+          connect with people and be part of the conversation.
+        </p>
+      </section>
+
+      <p class="copyright">© 2026 Chirp Social. Made with ♥</p>
+    </aside>
+
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
