@@ -1,114 +1,266 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Chirp - Social Network</title>
-  <link rel="stylesheet" href="style.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chirp - Mini Twitter</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
 </head>
+
 <body>
 
-  <div class="app">
+    <div class="app-container">
 
-    <aside class="sidebar">
-      <h1 class="logo">chirp<span>.</span></h1>
+        <!-- LEFT SIDEBAR -->
+        <aside class="sidebar">
 
-      <nav>
-        <a class="active" href="#home">⌂ Home</a>
-        <a href="#explore">⌕ Explore</a>
-        <a href="#notifications">♡ Notifications</a>
-        <a href="#messages">✉ Messages</a>
-        <a href="#profile">♙ Profile</a>
-      </nav>
+            <div class="logo">
+                <i class="fa-brands fa-twitter"></i>
+                <span>chirp</span>
+            </div>
 
-      <button class="side-post" onclick="focusPost()">+ Create Post</button>
+            <nav class="navigation">
+                <a href="#" class="nav-item active">
+                    <i class="fa-solid fa-house"></i>
+                    <span>Home</span>
+                </a>
 
-      <div class="sidebar-profile">
-        <div class="avatar">U</div>
-        <div>
-          <strong id="sideName">Guest User</strong>
-          <small id="sideHandle">@guest</small>
-        </div>
-      </div>
-    </aside>
+                <a href="#" class="nav-item">
+                    <i class="fa-solid fa-hashtag"></i>
+                    <span>Explore</span>
+                </a>
 
-    <main class="feed-area" id="home">
+                <a href="#" class="nav-item">
+                    <i class="fa-regular fa-bell"></i>
+                    <span>Notifications</span>
+                </a>
 
-      <div class="topbar">
-        <div>
-          <h2>Home</h2>
-          <p class="subheading">Your daily dose of conversations.</p>
-        </div>
-        <button class="login-button" id="loginBtn">Login</button>
-      </div>
+                <a href="#" class="nav-item">
+                    <i class="fa-regular fa-envelope"></i>
+                    <span>Messages</span>
+                </a>
 
-      <section class="welcome-banner">
-        <div>
-          <p class="eyebrow">WELCOME TO CHIRP</p>
-          <h2>Share your thoughts.<br>Connect with everyone.</h2>
-          <p>Discover conversations and share what matters to you.</p>
-        </div>
-        <div class="banner-icon">✦</div>
-      </section>
+                <a href="#" class="nav-item">
+                    <i class="fa-regular fa-bookmark"></i>
+                    <span>Bookmarks</span>
+                </a>
 
-      <section class="composer">
-        <div class="avatar">U</div>
-        <div class="composer-content">
-          <textarea id="postText" placeholder="What's happening today?"></textarea>
-          <div class="composer-bottom">
-            <span>✦ Share something interesting</span>
-            <button id="postBtn">Publish Post ↗</button>
-          </div>
-        </div>
-      </section>
+                <a href="#" class="nav-item">
+                    <i class="fa-regular fa-user"></i>
+                    <span>Profile</span>
+                </a>
+            </nav>
 
-      <div class="feed-heading">
-        <h3>Latest Posts</h3>
-        <span>For you ✨</span>
-      </div>
+            <button class="sidebar-post-btn" onclick="focusPost()">
+                Post
+            </button>
 
-      <section id="feed"></section>
+            <div class="sidebar-profile">
+                <img src="https://i.pravatar.cc/100?img=47" alt="Profile">
+                <div>
+                    <h4>Swathi</h4>
+                    <p>@swathi</p>
+                </div>
+                <i class="fa-solid fa-ellipsis"></i>
+            </div>
 
-    </main>
+        </aside>
 
-    <aside class="rightbar">
-      <div class="search-box">
-        <span>⌕</span>
-        <input type="text" id="searchInput" placeholder="Search posts...">
-      </div>
 
-      <section class="right-card">
-        <h3>🔥 Trending Topics</h3>
-        <div class="trend">
-          <small>Technology · Trending</small>
-          <strong>#ArtificialIntelligence</strong>
-          <small>12.5K posts</small>
-        </div>
-        <div class="trend">
-          <small>Social · Trending</small>
-          <strong>#DailyThoughts</strong>
-          <small>8,420 posts</small>
-        </div>
-        <div class="trend">
-          <small>Community · Popular</small>
-          <strong>#ChirpCommunity</strong>
-          <small>5,210 posts</small>
-        </div>
-      </section>
+        <!-- MAIN FEED -->
+        <main class="main-content">
 
-      <section class="right-card">
-        <h3>About Chirp</h3>
-        <p class="about-text">
-          A little space for big ideas. Share your thoughts,
-          connect with people and be part of the conversation.
-        </p>
-      </section>
+            <header class="top-header">
+                <h2>Home</h2>
+                <i class="fa-regular fa-star"></i>
+            </header>
 
-      <p class="copyright">© 2026 Chirp Social. Made with ♥</p>
-    </aside>
+            <!-- POST CREATION -->
+            <section class="create-post">
 
-  </div>
+                <img src="https://i.pravatar.cc/100?img=47" alt="Profile">
 
-  <script src="script.js"></script>
+                <div class="post-input-area">
+                    <textarea id="postText"
+                        placeholder="What's happening?"></textarea>
+
+                    <div class="post-options">
+                        <div class="post-tools">
+                            <i class="fa-regular fa-image"></i>
+                            <i class="fa-solid fa-list"></i>
+                            <i class="fa-regular fa-face-smile"></i>
+                            <i class="fa-regular fa-calendar"></i>
+                        </div>
+
+                        <button onclick="addPost()">Post</button>
+                    </div>
+                </div>
+
+            </section>
+
+
+            <!-- POSTS -->
+            <section id="postsContainer">
+
+                <article class="post-card">
+
+                    <img src="https://i.pravatar.cc/100?img=12" alt="Profile">
+
+                    <div class="post-content">
+
+                        <div class="post-header">
+                            <div>
+                                <strong>Alex Morgan</strong>
+                                <span class="verified">✓</span>
+                                <span class="username">@alexmorgan · 2h</span>
+                            </div>
+
+                            <i class="fa-solid fa-ellipsis"></i>
+                        </div>
+
+                        <p>
+                            Building something amazing every day! 🚀
+                            Small steps lead to big achievements.
+                            Keep learning and keep growing.
+                        </p>
+
+                        <div class="post-image">
+                            <img src="https://images.unsplash.com/photo-1497366754035-f200968a6e72?w=800"
+                                alt="Workspace">
+                        </div>
+
+                        <div class="post-actions">
+                            <button><i class="fa-regular fa-comment"></i> 12</button>
+                            <button><i class="fa-solid fa-retweet"></i> 8</button>
+                            <button onclick="likePost(this)">
+                                <i class="fa-regular fa-heart"></i> <span>24</span>
+                            </button>
+                            <button><i class="fa-solid fa-arrow-up-from-bracket"></i></button>
+                        </div>
+
+                    </div>
+                </article>
+
+
+                <article class="post-card">
+
+                    <img src="https://i.pravatar.cc/100?img=32" alt="Profile">
+
+                    <div class="post-content">
+
+                        <div class="post-header">
+                            <div>
+                                <strong>Priya Sharma</strong>
+                                <span class="verified">✓</span>
+                                <span class="username">@priyasharma · 4h</span>
+                            </div>
+
+                            <i class="fa-solid fa-ellipsis"></i>
+                        </div>
+
+                        <p>
+                            A beautiful day to start something new.
+                            Stay positive and believe in yourself! 💙
+                        </p>
+
+                        <div class="post-actions">
+                            <button><i class="fa-regular fa-comment"></i> 5</button>
+                            <button><i class="fa-solid fa-retweet"></i> 3</button>
+                            <button onclick="likePost(this)">
+                                <i class="fa-regular fa-heart"></i> <span>18</span>
+                            </button>
+                            <button><i class="fa-solid fa-arrow-up-from-bracket"></i></button>
+                        </div>
+
+                    </div>
+                </article>
+
+            </section>
+
+        </main>
+
+
+        <!-- RIGHT SIDEBAR -->
+        <aside class="right-sidebar">
+
+            <div class="search-box">
+                <i class="fa-solid fa-magnifying-glass"></i>
+                <input type="text" placeholder="Search Chirp">
+            </div>
+
+            <section class="trending-card">
+
+                <h3>What's happening</h3>
+
+                <div class="trend-item">
+                    <span>Technology · Trending</span>
+                    <strong>#ArtificialIntelligence</strong>
+                    <small>12.5K posts</small>
+                </div>
+
+                <div class="trend-item">
+                    <span>India · Trending</span>
+                    <strong>#DigitalIndia</strong>
+                    <small>8,420 posts</small>
+                </div>
+
+                <div class="trend-item">
+                    <span>Trending · Technology</span>
+                    <strong>#WebDevelopment</strong>
+                    <small>5,230 posts</small>
+                </div>
+
+                <a href="#">Show more</a>
+
+            </section>
+
+
+            <section class="follow-card">
+
+                <h3>Who to follow</h3>
+
+                <div class="follow-item">
+                    <img src="https://i.pravatar.cc/100?img=44" alt="Profile">
+
+                    <div>
+                        <strong>John David</strong>
+                        <span>@johndavid</span>
+                    </div>
+
+                    <button>Follow</button>
+                </div>
+
+                <div class="follow-item">
+                    <img src="https://i.pravatar.cc/100?img=25" alt="Profile">
+
+                    <div>
+                        <strong>Emma Wilson</strong>
+                        <span>@emmawilson</span>
+                    </div>
+
+                    <button>Follow</button>
+                </div>
+
+                <a href="#">Show more</a>
+
+            </section>
+
+
+            <footer class="footer">
+                <p>About · Privacy · Terms · Help</p>
+                <p>© 2026 Chirp Social</p>
+            </footer>
+
+        </aside>
+
+    </div>
+
+
+    <script src="script.js"></script>
+
 </body>
 </html>
